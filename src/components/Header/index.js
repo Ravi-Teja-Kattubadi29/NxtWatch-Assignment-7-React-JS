@@ -504,8 +504,8 @@ const Header = props => (
           <NavDetailsContainer>
             <LightThemeIcon
               type="button"
-              onClick={onChangeTheme}
               data-testid="theme"
+              onClick={onChangeTheme}
             >
               <FaMoon
                 style={{
@@ -538,8 +538,8 @@ const Header = props => (
           <NavDetailsContainer>
             <LightThemeIcon
               type="button"
-              onClick={onChangeTheme}
               data-testid="theme"
+              onClick={onChangeTheme}
             >
               <FiSun
                 style={{

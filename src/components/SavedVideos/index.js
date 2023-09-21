@@ -34,7 +34,10 @@ const SavedVideos = () => (
       const lightNoSavedVideos = () => (
         <>
           <Header />
-          <SavedVideosContainer data-testid="savedVideos">
+          <SavedVideosContainer
+            data-testid="savedVideos"
+            style={{bgColor: '#f9f9f9'}}
+          >
             <SideNavBar />
             <NoSavedVideosContainer bgColor="#f9f9f9">
               <NoSavedVideosImage
@@ -55,7 +58,10 @@ const SavedVideos = () => (
       const darkNoSavedVideos = () => (
         <>
           <Header />
-          <SavedVideosContainer data-testid="savedVideos">
+          <SavedVideosContainer
+            data-testid="savedVideos"
+            style={{bgColor: '#0f0f0f'}}
+          >
             <SideNavBar />
             <NoSavedVideosContainer bgColor="#0f0f0f">
               <NoSavedVideosImage
@@ -76,7 +82,10 @@ const SavedVideos = () => (
       const lightSavedVideos = () => (
         <>
           <Header />
-          <SavedVideosContainer data-testid="savedVideos">
+          <SavedVideosContainer
+            data-testid="savedVideos"
+            style={{bgColor: '#f9f9f9'}}
+          >
             <SideNavBar />
             <VideosContainer bgColor="#f9f9f9">
               {removeBannerStatus ? null : <NxtWatchBanner />}
@@ -107,7 +116,10 @@ const SavedVideos = () => (
       const darkSavedVideos = () => (
         <>
           <Header />
-          <SavedVideosContainer data-testid="savedVideos">
+          <SavedVideosContainer
+            data-testid="savedVideos"
+            style={{bgColor: '#0f0f0f'}}
+          >
             <SideNavBar />
 
             <VideosContainer bgColor="#0f0f0f">
@@ -228,7 +240,7 @@ export default SavedVideos
 
 //     const trendingVideosResponse = await fetch(trendingVideosApiUrl, options)
 //     // console.log(trendingVideosResponse)
-//     if (trendingVideosResponse.status === 200) {
+//     if (trendingVideosResponse.ok === true) {
 //       const trendingVideosData = await trendingVideosResponse.json()
 //       //   console.log(trendingVideosData)
 //       this.onSuccessSavedVideos(trendingVideosData)

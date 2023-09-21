@@ -28,7 +28,7 @@ class TrendingVideoCard extends Component {
       publishedAt,
       id,
     } = eachTrendingVideo
-    console.log(`trending ${eachTrendingVideo}`)
+    // console.log(`trending ${eachTrendingVideo}`)
     const {channelName, profileImageUrl} = channelDetails
 
     const date = new Date(publishedAt)

@@ -103,7 +103,9 @@ class HomeVideoCard extends Component {
             <ChannelLogo src={profileImageUrl} alt="channel logo" />
             <VideoDetails>
               <DarkVideoTitle as="p">{title}</DarkVideoTitle>
-              <DarkChannelName as="p">{name}</DarkChannelName>
+              <DarkChannelName as="p" color=" #64748b">
+                {name}
+              </DarkChannelName>
 
               {/* <DarkViewCount>
                 <DarkSmallDevicesChannelName>

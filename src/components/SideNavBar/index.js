@@ -240,12 +240,21 @@ class SideNavBar extends Component {
               <SecondSideNavBarContainer>
                 <DarkContactUs>CONTACT US</DarkContactUs>
                 <LogosContainer>
-                  <ImageLogo src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png " />
-                  <ImageLogo src="https://assets.ccbp.in/frontend/react-js/nxt-watch-twitter-logo-img.png " />
-                  <ImageLogo src="https://assets.ccbp.in/frontend/react-js/nxt-watch-linked-in-logo-img.png " />
+                  <ImageLogo
+                    src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png"
+                    alt="facebook logo"
+                  />
+                  <ImageLogo
+                    src="https://assets.ccbp.in/frontend/react-js/nxt-watch-twitter-logo-img.png"
+                    alt="twitter logo"
+                  />
+                  <ImageLogo
+                    src="https://assets.ccbp.in/frontend/react-js/nxt-watch-linked-in-logo-img.png"
+                    alt="linked in logo"
+                  />
                 </LogosContainer>
                 <DarkContactInfo>
-                  Enjoy! Now to see your channels and recommendatios!
+                  Enjoy! Now to see your channels and recommendations!
                 </DarkContactInfo>
               </SecondSideNavBarContainer>
             </DarkSideNavBarContainer>

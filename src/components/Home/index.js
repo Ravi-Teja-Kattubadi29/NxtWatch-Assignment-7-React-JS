@@ -90,7 +90,7 @@ class Home extends Component {
       },
     }
     const homeVideosResponse = await fetch(homeVideosApiUrl, options)
-    if (homeVideosResponse.status === 200) {
+    if (homeVideosResponse.ok === true) {
       const homeVideosData = await homeVideosResponse.json()
       this.onSuccessHomeVideosData(homeVideosData)
     } else {
@@ -108,11 +108,6 @@ class Home extends Component {
       }}
     </NxtWatchContext.Consumer>
   )
-
-  //   onClickRetryButton = () => {
-  //     // console.log('triggered')
-  //     this.getHomeVideos()
-  //   }
 
   lightNoResultsFound = () => (
     <NoResultsFoundContainer>
@@ -321,7 +316,7 @@ class Home extends Component {
   lightHomeComponent = () => (
     <>
       <Header />
-      <HomeContainer data-testid="home">
+      <HomeContainer data-testid="home" style={{bgColor: '#f9f9f9'}}>
         <SideNavBar />
         {this.lightMajorContainer()}
       </HomeContainer>
@@ -331,7 +326,7 @@ class Home extends Component {
   darkHomeComponent = () => (
     <>
       <Header />
-      <HomeContainer data-testid="home">
+      <HomeContainer data-testid="home" style={{bgColor: '#181818'}}>
         <SideNavBar />
         {this.darkMajorContainer()}
       </HomeContainer>

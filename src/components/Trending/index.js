@@ -73,7 +73,7 @@ class Trending extends Component {
 
     const trendingVideosResponse = await fetch(trendingVideosApiUrl, options)
 
-    if (trendingVideosResponse.status === 200) {
+    if (trendingVideosResponse.ok === true) {
       const trendingVideosData = await trendingVideosResponse.json()
 
       this.onSuccessTrendingVideos(trendingVideosData)
@@ -116,10 +116,17 @@ class Trending extends Component {
         return (
           <>
             <Header />
-            <TrendingContainer data-testid="trending">
+            <TrendingContainer
+              data-testid="trending"
+              style={{bgColor: '#f9f9f9 '}}
+            >
               <SideNavBar />
               {/* <APIFailure /> */}
-              <VideosContainer bgColor="#f9f9f9" id="trendingContainer">
+              <VideosContainer
+                bgColor="#f9f9f9"
+                id="trendingContainer"
+                data-testid="trending"
+              >
                 {removeBannerStatus ? null : <NxtWatchBanner />}
                 <TrendingNavBar bgColor="#f1f1f1">
                   <LogoContainerExtraSmall bgColor="#e2e8f0">
@@ -150,9 +157,12 @@ class Trending extends Component {
         return (
           <>
             <Header />
-            <TrendingContainer data-testid="trending">
+            <TrendingContainer
+              data-testid="trending"
+              style={{bgColor: '#0f0f0f'}}
+            >
               <SideNavBar />
-              <VideosContainer bgColor="#0f0f0f">
+              <VideosContainer bgColor="#0f0f0f" data-testid="trending">
                 {removeBannerStatus ? null : <NxtWatchBanner />}
                 <TrendingNavBar bgColor="#181818">
                   <LogoContainerExtraSmall bgColor="#0f0f0f">

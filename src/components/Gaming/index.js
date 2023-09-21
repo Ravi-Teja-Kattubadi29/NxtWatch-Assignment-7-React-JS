@@ -68,7 +68,7 @@ class Gaming extends Component {
 
     const gamingVideosResponse = await fetch(gamingVideosApiUrl, options)
 
-    if (gamingVideosResponse.status === 200) {
+    if (gamingVideosResponse.ok === true) {
       const gamingVideosData = await gamingVideosResponse.json()
 
       this.onSuccessGamingVideos(gamingVideosData)
@@ -110,10 +110,10 @@ class Gaming extends Component {
         return (
           <>
             <Header />
-            <GamingContainer data-testid="gaming">
+            <GamingContainer data-testid="gaming" style={{bgColor: '#f9f9f9 '}}>
               <SideNavBar />
 
-              <VideosContainer bgColor="#f9f9f9">
+              <VideosContainer bgColor="#f9f9f9" data-testid="gaming">
                 {removeBannerStatus ? null : <NxtWatchBanner />}
                 <GamingNavBar bgColor="#f1f1f1">
                   <LogoContainerExtraSmall bgColor="#e2e8f0">
@@ -148,10 +148,10 @@ class Gaming extends Component {
         return (
           <>
             <Header />
-            <GamingContainer data-testid="gaming">
+            <GamingContainer data-testid="gaming" style={{bgColor: '#0f0f0f'}}>
               <SideNavBar />
 
-              <VideosContainer bgColor="#0f0f0f">
+              <VideosContainer bgColor="#0f0f0f" data-testid="gaming">
                 {removeBannerStatus ? null : <NxtWatchBanner />}
                 <GamingNavBar bgColor="#181818">
                   <LogoContainerExtraSmall bgColor="#0f0f0f">

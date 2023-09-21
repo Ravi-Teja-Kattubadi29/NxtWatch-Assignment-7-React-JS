@@ -131,7 +131,7 @@ class VideoItemDetails extends Component {
 
     if (jwtToken !== undefined) {
       const VideoDetailsResponse = await fetch(videoItemDetailsApiUrl, options)
-      if (VideoDetailsResponse.status === 200) {
+      if (VideoDetailsResponse.ok === true) {
         const VideoData = await VideoDetailsResponse.json()
         // console.log(VideoData)
         console.log('suc')
@@ -155,10 +155,11 @@ class VideoItemDetails extends Component {
 
           const {videoDetails} = this.state
 
-          const filteredVideoDetails = savedVideosList.filter(eachVideo => {
-            console.log(eachVideo)
-            return eachVideo.id === videoDetails.id
-          })
+          const filteredVideoDetails = savedVideosList.filter(
+            eachVideo =>
+              // console.log(eachVideo)
+              eachVideo.id === videoDetails.id,
+          )
 
           if (filteredVideoDetails.length !== 0) {
             videoDetails.saveVideo = true
@@ -255,7 +256,7 @@ class VideoItemDetails extends Component {
             const {like} = this.state
 
             return like ? (
-              <Button onClick={onClickLikeButton}>
+              <Button onClick={onClickLikeButton} style={{color: '#2563eb'}}>
                 <BiLike
                   style={{
                     height: 23,
@@ -266,7 +267,7 @@ class VideoItemDetails extends Component {
                 <Like color="#2563eb">Like</Like>
               </Button>
             ) : (
-              <Button onClick={onClickLikeButton}>
+              <Button onClick={onClickLikeButton} style={{color: '#64748b'}}>
                 <BiLike
                   style={{
                     height: 23,
@@ -282,12 +283,12 @@ class VideoItemDetails extends Component {
           const disLikeButton = () => {
             const {disLike} = this.state
             return disLike ? (
-              <Button onClick={onClickDislikeButton}>
+              <Button onClick={onClickDislikeButton} style={{color: '#2563eb'}}>
                 <BiDislike style={{height: 23, width: 23, color: '#2563eb'}} />
                 <Like color="#2563eb">Dislike</Like>
               </Button>
             ) : (
-              <Button onClick={onClickDislikeButton}>
+              <Button onClick={onClickDislikeButton} style={{color: '#64748b'}}>
                 <BiDislike style={{height: 23, width: 23, color: '#64748b'}} />
                 <Like color="#64748b">Dislike</Like>
               </Button>
@@ -300,14 +301,14 @@ class VideoItemDetails extends Component {
             const {saveVideo} = videoDetails
             console.log(saveVideo)
             return saveVideo ? (
-              <Button onClick={onUnClickSavedVideo}>
+              <Button onClick={onUnClickSavedVideo} style={{color: '#2563eb'}}>
                 <MdPlaylistAdd
                   style={{height: 23, width: 23, color: '#2563eb'}}
                 />
                 <Like color="#2563eb">Saved</Like>
               </Button>
             ) : (
-              <Button onClick={onClickSaveVideo}>
+              <Button onClick={onClickSaveVideo} style={{color: '#64748b'}}>
                 <MdPlaylistAdd
                   style={{height: 23, width: 23, color: '#64748b'}}
                 />
@@ -346,7 +347,11 @@ class VideoItemDetails extends Component {
             /* console.log(publishedDate) */
 
             return (
-              <VideosContainer bgColor="#0f0f0f">
+              <VideosContainer
+                style={{bgColor: '#0f0f0f'}}
+                bgColor="#0f0f0f"
+                data-testid="videoItemDetails"
+              >
                 <ExtraSmallVideoPlayer>
                   <ReactPlayer url={videoUrl} height="42vh" width="100%" />
                 </ExtraSmallVideoPlayer>
@@ -439,7 +444,10 @@ class VideoItemDetails extends Component {
             /* console.log(publishedDate) */
 
             return (
-              <VideosContainer bgColor="#f9f9f9">
+              <VideosContainer
+                style={{bgColor: '#f9f9f9'}}
+                data-testid="videoItemDetails"
+              >
                 <ExtraSmallVideoPlayer>
                   <ReactPlayer
                     url={videoUrl}
@@ -511,7 +519,10 @@ class VideoItemDetails extends Component {
           const lightVideoItemDetails = () => (
             <>
               <Header />
-              <VideoDetailsContainer data-testid="videoItemDetails">
+              <VideoDetailsContainer
+                data-testid="videoItemDetails"
+                style={{bgColor: '#f9f9f9'}}
+              >
                 <SideNavBar />
                 {renderLightFinalResults()}
               </VideoDetailsContainer>
@@ -521,7 +532,10 @@ class VideoItemDetails extends Component {
           const darkVideoItemDetails = () => (
             <>
               <Header />
-              <VideoDetailsContainer data-testid="videoItemDetails">
+              <VideoDetailsContainer
+                data-testid="videoItemDetails"
+                style={{bgColor: '#0f0f0f'}}
+              >
                 <SideNavBar />
                 {renderDarkFinalResults()}
               </VideoDetailsContainer>

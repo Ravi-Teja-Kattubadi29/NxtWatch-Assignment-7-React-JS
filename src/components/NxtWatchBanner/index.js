@@ -16,7 +16,7 @@ const NxtWatchBanner = () => (
 
       return (
         <BannerContainer data-testid="banner">
-          <BannerLogoContainer>
+          <BannerLogoContainer data-testid="banner">
             <NxtWatchLogo
               src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
               alt="nxt watch logo"
